@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { EnvioForm } from './components/EnvioForm';
+import { EnvioList } from './components/EnvioList';
+import './App.css'; // Asegúrate de tener un archivo CSS si usas estilos
 
 function App() {
-  const [count, setCount] = useState(0)
+    // Usaremos esta función para recargar la lista después de un registro exitoso
+    const [refreshTrigger, setRefreshTrigger] = useState(0);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const handleSuccess = () => {
+        setRefreshTrigger(prev => prev + 1);
+    };
+
+    return (
+        <div className="container">
+            <h1>Sistema de Gestión de Logística</h1>
+            
+            {/* 1. Formulario de Registro */}
+            <section className="form-section">
+                <EnvioForm onSuccess={handleSuccess} />
+            </section>
+
+            <hr style={{ margin: '40px 0' }} />
+
+            {/* 2. Listado de Consultas */}
+            <section className="list-section">
+                <h2>Envío Registrados y Consultas</h2>
+                <EnvioList refreshTrigger={refreshTrigger} />
+            </section>
+        </div>
+    );
 }
 
-export default App
+export default App;

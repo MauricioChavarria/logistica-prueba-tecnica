@@ -1,0 +1,58 @@
+# ----------------------------------------
+# 1. Configuración del IDE (VS Code)
+# ----------------------------------------
+# Ignorar la carpeta de configuración específica de tu IDE
+# (Esto previene que las configuraciones de tu máquina se compartan)
+.vscode/
+
+# ----------------------------------------
+# 2. Archivos de Python (Backend)
+# ----------------------------------------
+
+# Entornos Virtuales
+# Ignorar la carpeta donde se instala el entorno virtual
+/backend/venv/
+/env/
+
+# Archivos compilados y caché
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de caché de pruebas
+.pytest_cache/
+
+# Caché de Mypy (opcional, para type checking)
+.mypy_cache/
+
+# ----------------------------------------
+# 3. Archivos de Node/Frontend
+# ----------------------------------------
+
+# Dependencias instaladas
+/frontend/node_modules
+
+# Archivos generados por Vite (build)
+/frontend/dist
+
+# Caché de npm, Yarn, etc.
+npm-debug.log*
+yarn-debug.log*
+.npm/
+
+# ----------------------------------------
+# 4. Docker y Logs
+# ----------------------------------------
+
+# Archivos de logs
+*.log
+
+# Archivos de volumen de datos de PostgreSQL
+# Si estás montando un volumen localmente, ignóralo.
+/db/data/
+
+# ----------------------------------------
+# 5. Archivos de sistema y otros
+# ----------------------------------------
+.DS_Store # macOS
+Thumbs.db # Windows
