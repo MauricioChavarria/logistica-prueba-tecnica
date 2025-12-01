@@ -53,3 +53,6 @@ Para ejecutar las pruebas:
 
 # 5. Detener el EntornoPara detener y limpiar todos los contenedores al finalizar:
 docker compose down
+
+# 6 Diagrama E-R
+* https://dbdiagram.io/d/692d6d26d6676488ba0da17f
