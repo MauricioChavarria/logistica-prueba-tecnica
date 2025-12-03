@@ -28,12 +28,6 @@ app.add_middleware(
 
 app.include_router(api_router)
 
-
-@app.get("/debug-headers")
-async def debug_headers(request: Request):
-    """Endpoint de diagnóstico que devuelve los encabezados de la petición."""
-    return {k: v for k, v in request.headers.items()}
-
 @app.get("/")
 def read_root():
     return {"message": "API de Logística en funcionamiento. Ver /docs para la documentación."}
