@@ -29,7 +29,13 @@ def create_envio_terrestre(db: Session, envio: envio_schema.EnvioTerrestreCreate
     )
     
     db_envio = models.Envio(
-        **envio.model_dump(exclude_unset=True), # Toma todos los campos de Pydantic
+        cliente_id=envio.cliente_id,
+        tipo_producto_id=envio.tipo_producto_id,
+        cantidad=envio.cantidad,
+        fecha_registro=envio.fecha_registro,
+        fecha_entrega=envio.fecha_entrega,
+        bodega_id=envio.bodega_id,
+        placa_vehiculo=envio.placa_vehiculo,
         tipo_logistica="Terrestre",
         precio_base=envio.precio_envio,
         descuento_aplicado=descuento_aplicado,
@@ -52,15 +58,18 @@ def create_envio_maritimo(db: Session, envio: envio_schema.EnvioMaritimoCreate) 
     )
     
     db_envio = models.Envio(
-
-        **envio.model_dump(exclude_unset=True), 
-        
+        cliente_id=envio.cliente_id,
+        tipo_producto_id=envio.tipo_producto_id,
+        cantidad=envio.cantidad,
+        fecha_registro=envio.fecha_registro,
+        fecha_entrega=envio.fecha_entrega,
+        puerto_id=envio.puerto_id,
+        num_flota=envio.num_flota,
         tipo_logistica="Maritimo",
         precio_base=envio.precio_envio,
         descuento_aplicado=descuento_aplicado,
         precio_final=precio_final,
         num_guia=generar_numero_guia(),
-
         placa_vehiculo=None, 
         bodega_id=None
     )

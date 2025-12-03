@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/v1';
+// Durante desarrollo utilizar una ruta relativa para que Vite (o el proxy) redirija a la API.
+// Esto evita que el frontend intente resolver hostnames `-8000.app.github.dev` directamente.
+const API_BASE_URL = '/v1';
 const AUTH_TOKEN = 'Bearer TEST_BEARER_TOKEN_2025';
 
 

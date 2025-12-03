@@ -14,7 +14,7 @@ CREATE TABLE Bodega (
     bodega_id SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     direccion VARCHAR(255)
-)
+);
 
 CREATE TABLE Puerto (
     puerto_id SERIAL PRIMARY KEY,

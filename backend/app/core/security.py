@@ -6,11 +6,22 @@ VALID_TOKEN = "TEST_BEARER_TOKEN_2025"
 
 def get_current_user(authorization: Optional[str] = Header(None)):
     """Valida el token Bearer en el encabezado Authorization."""
+    # Tests expect a generic English message when not authenticated
     if not authorization or not authorization.startswith("Bearer "):
         raise HTTPException(
-            status_code=401, 
-            detail="Token de autorización faltante o inválido. Formato: Bearer [token]"
+            status_code=401,
+            detail="Not authenticated"
         )
-        
+
     token = authorization.split(" ")[1]
+
+    # Tests expect a specific message when credentials can't be validated
+    if token != VALID_TOKEN:
+        raise HTTPException(
+            status_code=401,
+            detail="Could not validate credentials"
+        )
+
+    return token
+
     
