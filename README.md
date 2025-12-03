@@ -18,17 +18,18 @@ Necesitas tener instalados los siguientes programas:
 Sigue estos pasos para levantar la infraestructura completa, incluyendo la base de datos y la interfaz de usuario.
 1.1. Iniciar la Infraestructura
 Asegúrate de estar en la carpeta raíz del proyecto y ejecuta:
-docker compose up --build -d
+* docker compose up --build -d
 
 1.2. Inicializar la Base de Datos
 Una vez que el contenedor db esté activo, ejecuta el script de esquema para crear las tablas y las referencias:
-docker exec -i logistica_db psql -U postgres -d logistica_db < database/schema.sql
+* docker exec -i logistica_db psql -U postgres -d logistica_db < database/schema.sql
 
 1.3. Ejecutar el Frontend
 El Frontend se ejecuta en modo de desarrollo local:
-cd frontend
-npm install
-npm run dev
+* cd frontend
+* npm install
+* npm run dev
+  
 La interfaz de usuario estará disponible en tu navegador en http://localhost:5173/.
 
 # 2. Endpoints de la API y Seguridad
