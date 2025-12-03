@@ -20,6 +20,7 @@ class EnvioMaritimoCreate(EnvioBase):
 class EnvioResponse(BaseModel):
     envio_id: int
     num_guia: str
+    cantidad: int
     precio_base: float
     descuento_aplicado: float
     precio_final: float
