@@ -9,7 +9,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# Configurar CORS para permitir solicitudes desde el frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -21,7 +20,6 @@ app.add_middleware(
         "https://shiny-space-enigma-9jw9w7qr7wwfppqq-5173.app.github.dev",
         "https://shiny-space-enigma-9jw9w7qr7wwfppqq-5174.app.github.dev",
     ],
-    # Aceptar cualquier subdominio bajo app.github.dev (útil para Codespaces)
     allow_origin_regex=r".*app\.github\.dev",
     allow_credentials=True,
     allow_methods=["*"],
