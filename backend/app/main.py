@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .api.api import api_router
-from fastapi import Request
 
 app = FastAPI(
     title="Logística Terrestre y Marítima API",
