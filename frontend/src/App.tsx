@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { EnvioForm } from './components/EnvioForm';
 import { EnvioList } from './components/EnvioList';
-import './App.css'; // Asegúrate de tener un archivo CSS si usas estilos
+import './App.css';
 
 function App() {
-    // Usaremos esta función para recargar la lista después de un registro exitoso
     const [refreshTrigger, setRefreshTrigger] = useState(0);
-
     const handleSuccess = () => {
         setRefreshTrigger(prev => prev + 1);
     };

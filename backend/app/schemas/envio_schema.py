@@ -31,3 +31,7 @@ class EnvioResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+# Alias por compatibilidad histórica / tests que usan otro nombre
+EnvioOut = EnvioResponse
