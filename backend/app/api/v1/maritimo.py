@@ -14,7 +14,7 @@ router = APIRouter(
 
 @router.post("/envios", response_model=envio_schema.EnvioResponse, status_code=201)
 def create_maritime_delivery(
-    envio: envio_schema.EnvioMaritimoCreate,  # <-- Usa el Schema Marítimo
+    envio: envio_schema.EnvioMaritimoCreate,
     db: Session = Depends(get_db)
 ):
     """Crea un nuevo registro de envío marítimo aplicando el descuento del 3% si es aplicable."""

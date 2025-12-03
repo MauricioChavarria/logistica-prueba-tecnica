@@ -1,4 +1,3 @@
-// frontend/src/components/EnvioList.tsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
